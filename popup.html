@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FirefoxSecurityExtension</title>
+</head>
+
+<body>
+        <h2>Cookies count</h2>
+            <p>First-party: <span id = fpc_num></span></p>
+            <p>Third-party:<span id = tpc_num></span></p>
+            <p>Session:<span id = sesh_num></span></p>
+            <p>Persistent:<span id = per_num></span></p>
+        <h2>Storage Count</h2>
+            <p>Local:<span id= local_storage></span></p>
+            <p>Session:<span id= session_storage></span></p>
+        <h2>Canvas fingerprinting</h2>
+            <p>Canvas fp:<span id= canvas_fp></span></p>
+        <h2>Third Party connections</h2>
+            <p>Found:<span id= tpconn></span></p>
+            <ul id=ul>
+            </ul>
+</body>
+<script src="popup.js"></script>
+</html>

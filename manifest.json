@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Security extension",
+  "version": "1.0",
+
+  "description": "Extensão teckhacker",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["main.js"]
+    }
+  ],
+    "permissions" : [
+        "webRequest",
+        "webRequestBlocking",
+        "activeTab",
+        "storage",
+        "tabs",
+        "cookies",
+        "<all_urls>"
+    ]
+}
+
