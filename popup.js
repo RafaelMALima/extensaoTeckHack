@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function(){
         console.log("thirdP connections:", response);
         if (response){
              response.forEach(site_detected =>{
-                var tag = document.createElement("span");
+                console.log(site_detected);
+                var tag = document.createElement("li");
                 tag.textContent = site_detected;
                 document.getElementsById("ul").appendChild(tag);
             });

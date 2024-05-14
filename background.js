@@ -182,7 +182,11 @@ browser.runtime.onMessage.addListener((m, sender, sendResponse) => {
         return true;
     }
     else if (m.action == "detectThirdPartyConnections"){
-        sendResponse(thirdPartyRequests);
+        browser.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            if (tabs.length > 0) {
+                sendResponse(Array.from(thirdPartyRequests[tabs[0].id]));
+            }
+        });
         return true;
     }
 });
