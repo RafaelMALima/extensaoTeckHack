@@ -183,7 +183,7 @@ browser.runtime.onMessage.addListener((m, sender, sendResponse) => {
     }
     else if (m.action == "detectThirdPartyConnections"){
         browser.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            if (tabs.length > 0) {
+            if (tabs.length > 0 && thirdPartyRequests[tabs[0].id]) {
                 sendResponse(Array.from(thirdPartyRequests[tabs[0].id]));
             } else{
                 sendResponse([]);
