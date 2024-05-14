@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 console.log(site_detected);
                 var tag = document.createElement("li");
                 tag.textContent = site_detected;
-                document.getElementsById("ul").appendChild(tag);
+                document.getElementById("ul").appendChild(tag);
             });
         }else{
             document.getElementById("tpconn").textContent = "Nn encontrou con. de terceiros";

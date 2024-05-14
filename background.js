@@ -185,6 +185,8 @@ browser.runtime.onMessage.addListener((m, sender, sendResponse) => {
         browser.tabs.query({active: true, currentWindow: true}, function(tabs) {
             if (tabs.length > 0) {
                 sendResponse(Array.from(thirdPartyRequests[tabs[0].id]));
+            } else{
+                sendResponse([]);
             }
         });
         return true;
